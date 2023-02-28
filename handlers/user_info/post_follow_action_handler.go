@@ -21,8 +21,9 @@ type ProxyPostFollowAction struct {
 	actionType int
 }
 
+//go语言没有构造函数的含义，常使用New开头的函数表示对应对象的创建
 func NewProxyPostFollowAction(context *gin.Context) *ProxyPostFollowAction {
-	return &ProxyPostFollowAction{Context: context}
+	return &ProxyPostFollowAction{Context: context}  //创建对象并赋值
 }
 
 func (p *ProxyPostFollowAction) Do() {

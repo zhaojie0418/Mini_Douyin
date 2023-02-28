@@ -44,7 +44,7 @@ func (q *QueryUserLoginFlow) Do() (*LoginResponse, error) {
 	if err := q.prepareData(); err != nil {
 		return nil, err
 	}
-	//打包最终数据
+	//打包最终数据（在判断的过程中就对data进行赋值操作）
 	if err := q.packData(); err != nil {
 		return nil, err
 	}

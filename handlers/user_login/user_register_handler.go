@@ -14,7 +14,7 @@ type UserRegisterResponse struct {
 
 func UserRegisterHandler(c *gin.Context) {
 	username := c.Query("username")
-	rawVal, _ := c.Get("password")
+	rawVal, _ := c.Get("password")//gin提供的获取数据返回的是接口，需要进行强转
 	password, ok := rawVal.(string)
 	if !ok {
 		c.JSON(http.StatusOK, UserRegisterResponse{
