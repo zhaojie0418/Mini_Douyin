@@ -3,10 +3,12 @@ package cache
 import (
 	"context"
 	"fmt"
+
 	"github.com/ACking-you/byte_douyin_project/config"
 	"github.com/go-redis/redis/v8"
 )
 
+//尝试对文件修改操作并应用git
 // 用户id->被点赞的视频id集合->是否含有该视频id
 
 var ctx = context.Background()
