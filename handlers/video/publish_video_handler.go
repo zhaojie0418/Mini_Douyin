@@ -47,6 +47,7 @@ func PublishVideoHandler(c *gin.Context) {
 
 	//支持多文件上传
 	files := form.File["data"]
+	//第一个返回值是索引（对于数组而言就是下标），如果不需要就可以用空标记
 	for _, file := range files {
 		suffix := filepath.Ext(file.Filename)    //得到后缀
 		if _, ok := videoIndexMap[suffix]; !ok { //判断是否为视频格式

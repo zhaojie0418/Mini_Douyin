@@ -9,6 +9,7 @@ import (
 	"strconv"
 )
 
+//TODO 这里好像只是将数据存放在Redis中了，并没有存储到mysql中
 func PostFollowActionHandler(c *gin.Context) {
 	NewProxyPostFollowAction(c).Do()
 }
@@ -54,7 +55,7 @@ func (p *ProxyPostFollowAction) prepareNum() error {
 
 	//解析需要关注的id
 	followId := p.Query("to_user_id")
-	parseInt, err := strconv.ParseInt(followId, 10, 64)
+	parseInt, err := strconv.ParseInt(followId, 10, 64)//转成int64
 	if err != nil {
 		return err
 	}
@@ -62,7 +63,7 @@ func (p *ProxyPostFollowAction) prepareNum() error {
 
 	//解析action_type
 	actionType := p.Query("action_type")
-	parseInt, err = strconv.ParseInt(actionType, 10, 32)
+	parseInt, err = strconv.ParseInt(actionType, 10, 32)//转成int32
 	if err != nil {
 		return err
 	}
