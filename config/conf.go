@@ -57,6 +57,7 @@ func init() {
 
 // DBConnectString 填充得到数据库连接字符串
 func DBConnectString() string {
+	//将给定字符串进行赋值
 	arg := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=%s&parseTime=%v&loc=%s",
 		Info.DB.Username, Info.DB.Password, Info.DB.Host, Info.DB.Port, Info.DB.Database,
 		Info.DB.Charset, Info.DB.ParseTime, Info.DB.Loc)

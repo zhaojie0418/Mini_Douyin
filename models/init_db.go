@@ -9,6 +9,9 @@ import (
 var DB *gorm.DB
 
 func InitDB() {
+	//初始化数据库实例
+	//dsn := "user:pass@tcp(127.0.0.1:3306)/dbname?charset=utf8mb4&parseTime=True&loc=Local"
+	//db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	var err error
 	DB, err = gorm.Open(mysql.Open(config.DBConnectString()), &gorm.Config{
 		PrepareStmt:            true, //缓存预编译命令
